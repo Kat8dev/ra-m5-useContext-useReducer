@@ -17,11 +17,17 @@ function Descargar() {
   ]
 
   return (
-    <Button style={{marginBottom: '1rem', width: '200px', alignSelf: 'flex-end'}}>
-      <CSVLink data={data} headers={headers}>
+    <CSVLink
+      style={{ textDecoration: 'none', color: 'white', alignSelf: 'flex-end' }}
+      data={data}
+      headers={headers}
+    >
+      <Button
+        style={{ marginBottom: '1rem', width: '200px' }}
+      >
         Download me
-      </CSVLink>
-    </Button>
+      </Button>
+    </CSVLink>
   )
 }
 
