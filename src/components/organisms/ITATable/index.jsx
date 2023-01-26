@@ -1,7 +1,7 @@
 import { useEffect, useContext } from 'react'
 import { Container } from '../../../styles'
 import Descargar from './Descargar'
-import Pagination from './pagination/Pagination'
+import TableFooter from './pagination/index'
 import TableProvider, { TableContext } from './store/context'
 import { Actions } from './store/reducer'
 import { TableStyled } from './styles'
@@ -23,7 +23,7 @@ function Table({ columns, data, showHeader = true }) {
         <TableBody />
       </TableStyled>
       <Container>
-        <Pagination />
+        <TableFooter />
       </Container>
     </>
   )

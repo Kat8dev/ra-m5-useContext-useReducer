@@ -6,12 +6,11 @@ import { options } from '../../../../constants'
 import { Text } from '../../../atoms'
 import { FlexBox } from '../../../../styles'
 
-function RightBar() {
-  const { state, dispatch } = useContext(TableContext)
+function RowPerPage() {
+  const { dispatch } = useContext(TableContext)
 
   const handleOnChange = (e) => {
     dispatch({ type: 'SET_ITEMPERPAGE', payload: e.target.value })
-    console.log(state)
   }
 
   return (
@@ -31,4 +30,4 @@ function RightBar() {
   )
 }
 
-export default RightBar
+export default RowPerPage
