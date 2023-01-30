@@ -16,7 +16,6 @@ function Table({ columns, data, showHeader = true }) {
     dispatch({ type: Actions.SET_DATA, payload: data })
     dispatch({ type: Actions.SET_COLUMNS, payload: columns })
   }, [data, columns, dispatch])
-  console.log(columns)
 
   return (
     <>
