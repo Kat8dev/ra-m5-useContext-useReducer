@@ -1,8 +1,8 @@
-import { CSVLink } from 'react-csv'
+import { CSVLink } from 'react-csv' // Funciona, pero construye la funcionalidad de descargar por ti misma
 import React, { useContext } from 'react'
 import { TableContext } from './store/context'
 // eslint-disable-next-line import/named
-import { Button } from '../../atoms'
+import { Button } from '../../atoms' // No importes atoms al componente tabla
 
 function Descargar() {
   const { state } = useContext(TableContext)
@@ -22,9 +22,7 @@ function Descargar() {
       data={data}
       headers={headers}
     >
-      <Button
-        style={{ marginBottom: '1rem', width: '200px' }}
-      >
+      <Button style={{ marginBottom: '1rem', width: '200px' }}>
         Download me
       </Button>
     </CSVLink>
