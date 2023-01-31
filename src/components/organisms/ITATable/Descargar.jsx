@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types'
 import arrayForDownload from './helpers/handleDownloadClick'
 
-const handleDownloadClick = ({ columns, data }) => {
+function Descargar ({ columns, data }) {
   const [ ...csvArray ] = arrayForDownload(columns, data)
   const csv = csvArray.map((d) => d).join('\n')
   const blob = new Blob([csv], { type: 'text/csv' })
@@ -13,4 +14,13 @@ const handleDownloadClick = ({ columns, data }) => {
   )
 }
 
-export default handleDownloadClick
+Descargar.propTypes = {
+  columns: PropTypes.arrayOf(
+    PropTypes.oneOfType([ PropTypes.object ]),
+  ),
+  data:  PropTypes.arrayOf(
+    PropTypes.oneOfType([ PropTypes.object ]),
+  ),
+}
+
+export default Descargar
