@@ -19,7 +19,7 @@ function Table({ columns, data, showHeader = true }) {
 
   return (
     <>
-      <Descargar />
+      <Descargar columns={columns} data={data} />
       <TableStyled>
         {showHeader && <TableHeader />}
         <TableBody />

@@ -1,18 +1,16 @@
-import React, { useContext } from 'react'
-import { TableContext } from './store/context'
-// eslint-disable-next-line import/named
-import { Button } from '../../atoms' 
-import handleDownloadClick from './helpers/handleDownloadClick'
+import arrayForDownload from './helpers/handleDownloadClick'
 
-function Descargar() {
-  const { state } = useContext(TableContext)
-  const { data, columns } = state
+const handleDownloadClick = ({ columns, data }) => {
+  const [ ...csvArray ] = arrayForDownload(columns, data)
+  const csv = csvArray.map((d) => d).join('\n')
+  const blob = new Blob([csv], { type: 'text/csv' })
+  const url = URL.createObjectURL(blob)
 
   return (
-    <Button type="button" onClick={() => handleDownloadClick(columns, data)}>
+    <a href={url} download="casas.csv">
       Download
-    </Button>
+    </a>
   )
 }
 
-export default Descargar
+export default handleDownloadClick
