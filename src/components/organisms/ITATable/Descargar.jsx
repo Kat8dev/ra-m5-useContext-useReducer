@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import arrayForDownload from './helpers/handleDownloadClick'
+import { arrayForDownload } from './helpers'
 
 function Descargar ({ columns, data }) {
   const [ ...csvArray ] = arrayForDownload(columns, data)

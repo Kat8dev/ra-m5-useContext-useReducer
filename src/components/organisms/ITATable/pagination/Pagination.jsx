@@ -10,12 +10,17 @@ const PaginationStyled = styled(FlexBox).attrs({ direction: 'row' })`
   ${Text} {
     font-weight: 900;
   }
+  ${Button} {
+    &:disabled {
+      background-color: grey;
+    }
+  }
 `
 function Pagination() {
   const { state, dispatch } = useContext(TableContext)
   const { currentPage, itemPerPage } = state
 
-  const totaPage = Math.ceil(state.data.length / itemPerPage)
+  const totaPage = Math.ceil(state.currentData.length / itemPerPage)
 
   const previous = () => {
     if (currentPage > 1) {
@@ -31,11 +36,11 @@ function Pagination() {
 
   return (
     <PaginationStyled>
-      <Button onClick={previous}>
+      <Button disabled={currentPage === 1} onClick={previous}>
         <Icon icon="arrow_back_ios" />
       </Button>
       <Text>Página {currentPage} de {totaPage}</Text>
-      <Button onClick={next}>
+      <Button disabled={currentPage === totaPage} onClick={next}>
         <Icon icon="arrow_forward_ios" />
       </Button>
     </PaginationStyled>

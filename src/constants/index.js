@@ -1,4 +1,7 @@
 export { default as paths } from './paths'
 export { default as urls } from './urls'
 export { default as options } from './perPage'
+export { default as columns } from './columns'
+export { default as columnsViviendas } from './columnsViviendas'
+export { default as columnsBarrios } from './columnsBarrios'
 export * from './menus'
