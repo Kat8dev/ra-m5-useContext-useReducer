@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  name: 'kevin',
+  name: 'Khat',
   surnames: {
-    first: 'mamaqi',
-    second: 'kapllani',
+    first: 'Jaba',
+    second: '',
   },
 }
 
